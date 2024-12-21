@@ -1,0 +1,20 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "Demo",
+            "database": "Demo",
+            "username": "root",
+            "password": "SoulStones@456",
+            "connectionTimeout": 30
+        }
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
+}

@@ -1,0 +1,240 @@
+Equilibrium index of an array
+Brute Force Approach
+public class solution {
+public int solve(int[] A) {
+int n = A.length;
+for(int i = 0; i < n; i++) {
+int leftSum = 0. rightSum = 0;
+for(int j = 0; j < i; j++) {
+leftSum += A[j];
+}
+for(int j = i+1; J < n; j++) {
+rightSum += A[j];
+}
+if(leftSum == rightSum) {
+return i;
+}
+}
+return -1;
+}
+public static void main(String[] args) {
+Solution solution = new Solution();
+
+int[] A1 = {-7, 1, 5, 2, -4, 3, 0}
+System.out.println(solution.solve(A1));
+
+int[] A2 = {1, 2, 3}
+System.out.println(solution.solve(A2));
+}
+}
+
+Optimized Approach
+int N = A.length;
+int totalSum = 0;
+for(int i = 0; i < N; i++) {
+totalSum += A[i];
+}
+int sumLeft = 0;
+for(int i = 0; i < N; i++) {
+int sumRight = totalSum - sumLeft - A[i];
+if(sumLeft == rightSum) {
+return i;
+}
+sumLeft += A[i];
+}
+return -1;
+}
+}
+
+Max Sum Contiguous Subarray
+Brute Force Approach
+public class solution {
+public int maxSubArray(final int[] A) {
+int n = A.length;
+int maxSum = Integer.MIN_VALUE;
+for(int i = 0; i < n; i++) {
+for(int j = i; j < n; j++) {
+int currentSum = 0;
+for(int k = i; k <= j; k++) {
+currentSum += A[k];
+}
+maxSum - Math.max(maxSum, currentSum);
+}
+}
+return maxSum;
+}
+public static void main(String[] args) {
+Solution solution = new Solution();       
+int[] A1 = {1, 2, 3, 4, -10};
+System.out.println(solution.maxSubArray(A1));
+int[] A2 = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+System.out.println(solution.maxSubArray(A2));
+}
+}
+
+Better Approach
+public class solution {
+public int maxSubArray(final int[] A) {
+int n = A.length;
+int maxSum = Integer.MIN_VALUE;
+for(int i = 0; i < n; i++) {
+int currentSum = 0;
+for(int j = i; j < n; j++) {
+currentSum += A[k];
+}
+maxSum = Math.max(maxSum, currentSum);
+}
+}
+return maxSum;
+}
+public static void main(String[] args) {
+Solution solution = new Solution();       
+int[] A1 = {1, 2, 3, 4, -10};
+System.out.println(solution.maxSubArray(A1));
+int[] A2 = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+System.out.println(solution.maxSubArray(A2));
+}
+}
+
+Optimized Approach
+public class solution {
+public int maxSubArray(final int[] A) {
+int n = A.length;
+long maxSum = Long.MIN_VALUE;
+long currentSum = 0;
+for(int i = 0; i < n; i++) {
+int currentSum += A[i];
+maxSum = Math.max(maxSum, currentSum);
+if(currentSum < 0) {
+currentSum = 0;
+}
+}
+return (int) maxSum;
+}
+public static void main(String[] args) {
+Solution solution = new Solution();       
+int[] A1 = {1, 2, 3, 4, -10};
+System.out.println(solution.maxSubArray(A1));
+int[] A2 = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+System.out.println(solution.maxSubArray(A2));
+}
+}
+
+Sum of All Subarrays
+Brute Force
+public class solution{
+public long subarraySum(int[] A) {
+int n = A.length;
+long totalSum = 0;
+for(int i = 0; i < n; i++) {
+long currentSum = 0;
+for(int j = i; j < n; j++) {
+currentSum += A[j];
+totalSum += currentSum;
+}
+}
+return totalSum;
+}
+public static void main(String[] args) }
+Solution solution = new Solution();
+int[] A1 = {1, 2, 3};
+System.out.println(solution.subarraySum(A1));
+int[] A2 = {2, 1, 3};
+System.out.println(solution.subarraySum(A2));
+}
+}
+
+Optimized Approach
+public class solution{
+public long subarraySum(int[] A) {
+int n = A.length;
+long totalSum = 0;
+for(int i = 0; i < n; i++) {
+long contribution = (long) A[i] * (i + 1) * (n - i);
+totalSum += currentSum;
+}
+return totalSum;
+}
+public static void main(String[] args) }
+Solution solution = new Solution();
+int[] A1 = {1, 2, 3};
+System.out.println(solution.subarraySum(A1));
+int[] A2 = {2, 1, 3};
+System.out.println(solution.subarraySum(A2));
+}
+}
+
+Subarray with given sum and length
+Brute Force
+public class solution {
+public int solve(int[] A, int B, int C) {
+int n = A.length;
+for(int i = 0; i <= n - B; i++) {
+int sum = 0;
+for(int j = i; j < i + B; j++) {
+sum += A[j];
+}
+if(sum == C) {
+return 1;
+}
+}
+return 0;
+}
+public static void main(String[] args) {
+Solution solution = new Solution();
+int[] A = {4, 3, 2, 6, 1};
+int B = 3;
+int C = 11;
+int result = solution.solve(A, B, C);
+System.out.println(result);
+}
+}
+
+Optimized Approach
+public class solution {
+public int solve(int[] A, int B, int C) {
+int n = A.length;
+int currentSum = 0;
+for(int i = 0; i < B; i++) {
+currentSum += A[i];
+}
+if(currentSum == C) {
+return 1;
+}
+for(int i = B; i < n; i++) {
+currentSum += A[i] - A[i - B];
+if(currentSum == C) {
+return 1;
+}
+}
+return 0;
+}
+public static void main(String[] args) {
+Solution solution = new Solution();
+int[] A = {4, 3, 2, 6, 1};
+int B = 3;
+int C = 11;
+int result = solution.solve(A, B, C);
+System.out.println(result);
+}
+}
+
+First Missing Integer
+Brute Force
+public class Solution {
+public int firstMissingPositive(int[] A) {
+int n = A.length;
+for(int i = 1; i <= n + 1; i++) {
+Boolean found = false;
+for(int j = 0; j < n; j++) {
+if(A[j] == i) {
+found = true;
+break;
+}
+}
+if(!found) {
+return i;
+}
+}
+return n + 1;
+}
