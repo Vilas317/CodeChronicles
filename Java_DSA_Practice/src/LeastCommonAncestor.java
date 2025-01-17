@@ -1,4 +1,4 @@
-public class LeastCommonAncestor {
+/*public class LeastCommonAncestor {
     public int lca(TreeNode A, int B, int C) {
         TreeNode lcaNode = findLCA(A, B, C);
 
@@ -29,5 +29,39 @@ public class LeastCommonAncestor {
             return true;
         }
         return find(root.left, value) || find(root.right, value);
+    }
+}*/
+// Definition for a binary tree node
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode(int x) {
+        val = x;
+        left = null;
+        right = null;
+    }
+}
+
+public class LeastCommonAncestor {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        // Base case
+        if (root == null || root == p || root == q) {
+            return root;
+        }
+
+        // Recursively search in the left and right subtrees
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+
+        // Result
+        if (left == null) {
+            return right;
+        } else if (right == null) {
+            return left;
+        } else { // Both left and right are not null, we found our result
+            return root;
+        }
     }
 }

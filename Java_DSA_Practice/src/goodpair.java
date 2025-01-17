@@ -1,27 +1,86 @@
-//Given an array A and an integer B. A pair(i, j) in the array is a good pair if i != j and (A[i] + A[j] == B). Check if any good pair exist or not.
-//Brute force
+import java.util.Arrays;
+
+//Brute Force
 public class goodpair {
-    public int solve(int A[], int B){
-        for(int i=0; i<1; i++){
-            for(int j=0; j<1; j++){
+    public int solve(int[] A, int B) {
+        /*for(int i = 0; i<A.length; i++) {
+            for(int j = 0; j<A.length; j++) {
                 if(i == j) continue;
-                if(A[i]+A[j]==B)
-                return 1;
+                if(A[i] + A[j] == B) return 1;
             }
         }
         return 0;
     }
-/**
- * @param args
- */
-public static void main(String args[]) {
-    int n = 5;
-    int[] arr = {2, 6, 5, 8, 11};
-    int target = 14;
-    String ans = App.goodpair(n, arr, target);
-    extracted(ans);
+    public static void main(String[] args) {
+        goodpair gp = new goodpair();
+        int[] A1 = {1, 2, 3, 4};
+        int B1 = 7;
+        System.out.println("Test Case 1: " + (gp.solve(A1, B1) == 1 ? "Passed" : "Failed"));
+
+        int[] A2 = {1, 2, 4};
+        int B2 = 4;
+        System.out.println("Test Case 1: " + (gp.solve(A2, B2) == 1 ? "Passed" : "Failed"));
+
+        int[] A3 = {1, 2, 2};
+        int B3 = 4;
+        System.out.println("Test Case 1: " + (gp.solve(A3, B3) == 1 ? "Passed" : "Failed"));
+    }
+}*/
+//Better Approach - Hashing
+/*HashMap<Integer, Integer>mpp = new HashMap<>();
+for (int i = 0; i<A.length; i++) {
+    int num = A[i];
+    int moreNeeded = B - num;
+    if(mpp.containsKey(moreNeeded)) {
+    return 1;
 }
-private static void extracted(String ans) {
-    System.out.println("This is the answer for variant 1: " + ans);
+mpp.put(num, i);
+}
+return 0;
+}
+public static void main(String[] args) {
+    goodpair gp = new goodpair();
+    int[] A1 = {1, 2, 3, 4};
+    int B1 = 7;
+    System.out.println("Test Case 1: " + (gp.solve(A1, B1) == 1 ? "Passed" : "Failed"));
+
+    int[] A2 = {1, 2, 4};
+    int B2 = 4;
+    System.out.println("Test Case 1: " + (gp.solve(A2, B2) == 1 ? "Passed" : "Failed"));
+
+    int[] A3 = {1, 2, 2};
+    int B3 = 4;
+    System.out.println("Test Case 1: " + (gp.solve(A3, B3) == 1 ? "Passed" : "Failed"));
+}
+}*/
+
+//Optimal Approach - Two Pointer
+Arrays.sort(A);
+int left = 0; int right = A.length - 1;
+while(left < right) {
+    int sum = A[left] + A[right];
+    if(sum == B) {
+        return 1;
+    } else if(sum < B) {
+        left ++;
+    } else {
+        right --;
+    }
+}
+return 0;
+}
+public static void main(String[] args) {
+    goodpair gp = new goodpair();
+    int[] A1 = {1, 2, 3, 4};
+    int B1 = 7;
+    System.out.println("Test Case 1: " + (gp.solve(A1, B1) == 1 ? "Passed" : "Failed"));
+
+    int[] A2 = {1, 2, 4};
+    int B2 = 4;
+    System.out.println("Test Case 1: " + (gp.solve(A2, B2) == 1 ? "Passed" : "Failed"));
+
+    int[] A3 = {1, 2, 2};
+    int B3 = 4;
+    System.out.println("Test Case 1: " + (gp.solve(A3, B3) == 1 ? "Passed" : "Failed"));
 }
 }
