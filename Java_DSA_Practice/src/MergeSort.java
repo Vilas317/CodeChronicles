@@ -45,6 +45,10 @@ class Solution {
         mergeSort(arr, mid + 1, high); // Sort right half
         merge(arr, low, mid, high); // Merge the sorted halves
     }
+
+    public String maxProfit(List<Integer> a1) {
+        return null;
+    }
 }
 
 public class MergeSort {
