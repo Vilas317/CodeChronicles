@@ -1,0 +1,50 @@
+<!--Create a basic HTML webpage that displays a table like the one shown below:
+
+| Name | Tech | Rating | |---|---|---| | Vikhyat | HTML | 5 | | Vikhyat | CSS | 1 | | Ayush | HTML | 4 | | Ayush | CSS | 2 | | Total: | 12 |
+Verify Table is created (table tag is used).
+
+Verify first row items use th and not td
+
+Verify Other rows use td. (Checks if all the rows except the first row contains td tag or not)
+
+Verify rowspan according to the table. (Vikhayat and Ayush's td tag should have rowspan of 2)
+
+Verify colspan according to the table. (Total:12's td tag should have colspan of 3)  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Table</title>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Tech</th>
+    <th>Rating</th>
+  </tr>
+  <tr>
+    <td rowspan="2">Vikhyat</td>
+    <td>HTML</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>CSS</td>
+    <td>1</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Ayush</td>
+    <td>HTML</td>
+    <td>4</td>
+  </tr>
+  <tr>
+    <td>CSS</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <td colspan="3">Total: 12</td>
+  </tr>
+</table>
+</body>
+</html>
