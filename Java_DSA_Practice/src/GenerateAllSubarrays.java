@@ -16,8 +16,6 @@ public class GenerateAllSubarrays {
         return ans;
     }
     public static void main(String[] args) {
-        GenerateAllSubarrays solve = new GenerateAllSubarrays();
-        
         ArrayList<Integer> A1 = new ArrayList<>(Arrays.asList(1, 2, 3));
         ArrayList<Integer> result1 = GenerateAllSubarrays.solve(A1);
         System.out.println(result1);

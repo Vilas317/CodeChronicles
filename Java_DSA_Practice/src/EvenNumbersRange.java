@@ -17,8 +17,6 @@ public class EvenNumbersRange {
         return ans;
     }
     public static void main(String[] args) {
-        EvenNumbersRange sol = new EvenNumbersRange();
-
         int[] A1 = {1, 2, 3, 4, 5};
         int[][] B1 = {{0, 2}, {2, 4}, {1, 4}};
         int[] result1 = EvenNumbersRange.solve(A1, B1);

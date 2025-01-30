@@ -13,8 +13,6 @@ public class ArithmeticProgression {
         return 1;
     }
     public static void main(String[] args) {
-        ArithmeticProgression arithmeticProgression = new ArithmeticProgression();
-        
         ArrayList<Integer> input1 = new ArrayList<>();
         input1.add(3);
         input1.add(5);

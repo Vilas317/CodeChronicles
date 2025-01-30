@@ -17,8 +17,6 @@ public class CountofElements {
         return count;
     }
     public static void main(String[] args) {
-        CountofElements solve = new CountofElements();
-        
         int[] A1 = {3, 1, 2};
         System.out.println(CountofElements.solve(A1));  
 

@@ -14,8 +14,6 @@ public class SpecialSubsequences {
         return result;
     }
     public static void main(String[] args) {
-        SpecialSubsequences solve = new SpecialSubsequences();
-
         String A1 = "ABCGAG";
         System.out.println(SpecialSubsequences.solve(A1));
 

@@ -28,8 +28,6 @@ public class SumOddIndices {
         return ans;
     }
     public static void main(String[] args) {
-        SumOddIndices solve = new SumOddIndices();
-        
         int[] A1 = {1, 2, 3, 4, 5};
         int[][] B1 = {{0, 2}, {1, 4}};
         int[] result1 = SumOddIndices.solve(A1, B1);

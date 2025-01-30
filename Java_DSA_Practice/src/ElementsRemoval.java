@@ -13,8 +13,6 @@ public class ElementsRemoval {
         return totalCost;
     }
     public static void main(String[] args) {
-        ElementsRemoval elementsRemoval = new ElementsRemoval();
-
         ArrayList<Integer> input1 = new ArrayList<>();
         input1.add(2);
         input1.add(1);

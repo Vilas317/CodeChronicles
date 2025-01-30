@@ -17,8 +17,6 @@ public class ArrrayRotation {
         return A;
     }
     public static void main(String[] args) {
-        ArrrayRotation solve = new ArrrayRotation();
-
         int[] A1 = {1, 2, 3, 4};
         int B1 = 2;
         int[] result1 = ArrrayRotation.solve(A1, B1);

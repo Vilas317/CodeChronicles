@@ -97,8 +97,6 @@ System.out.println("Second largest is " + second_large);
 return second_large;
 }
     public static void main(String[] args) {
-        SecondLargest solve = new SecondLargest();
-
         int[] A1 = {2, 1, 2};
         System.out.println(SecondLargest.solve(A1));
 

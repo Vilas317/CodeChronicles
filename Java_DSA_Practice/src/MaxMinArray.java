@@ -15,8 +15,6 @@ public class MaxMinArray {
     }
 
     public static void main(String[] args) {
-        MaxMinArray solve = new MaxMinArray();
-
         int[] A1 = {-2, 1, -4, 5, 3};
         int[] A2 = {1, 3, 4, 1};
 

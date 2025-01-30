@@ -11,8 +11,6 @@ public class CountOccurences {
     }
 
     public static void main(String[] args) {
-        CountOccurences co = new CountOccurences();
-
         int[] A1 = {1, 2, 2};
         int B1 = 2;
         System.out.println(CountOccurences.solve(A1, B1));

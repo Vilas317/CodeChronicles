@@ -1,0 +1,68 @@
+<!-- The goal of this problem is to use CSS to style a webpage with different colors.
+
+Write CSS to change the:
+1. Color of h1 element to 'blue'
+2. Background color of p element to 'rgb(255,255,0)'
+3. Color of element with 'highlight' class to '#ff0000'
+4. Background color of element with 'special' id to 'hsl(120, 100%, 50%)'
+5. Background color of input element to 'rgba(255, 0, 0, 0.5)'
+6. Color of link (a) to 'hsla(0, 100%, 50%, 0.8)' when hovered over
+
+Further, refer to the test cases to understand necessary requirements to submit the problem.
+Verify that the color of h1 element is 'blue'
+
+Verify that the background color of p element is 'rgb(255,255,0)'
+
+Verify that the Color of element with 'highlight' class is '#ff0000'
+
+Verify that the Background color of element with 'special' id is 'hsl(120, 100%, 50%)'
+
+Verify that the Background color of input element is 'rgba(255, 0, 0, 0.5)'
+
+Verify that the Color of link (a) is 'hsla(0, 100%, 50%, 0.8)' when hovered over -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Heading</h1>
+    <style>
+        h1 {
+    color: blue;
+}
+</style>
+    <p>Paragraph with yellow background.</p>
+    <style>
+        p {
+     background-color: rgb(255,255,0);
+}
+    </style>
+    <p class="highlight">This is a highlighted paragraph.</p>
+    <style>
+        .highlight {
+        color: #ff0000;
+}
+    </style>
+    <p id="special">This is a special paragraph.</p>
+    <style>
+        #special {
+        background-color: hsl(120, 100%, 50%);
+}
+    </style>
+    <input type="text" />
+    <style>
+    input {
+       background-color: rgba(255, 0, 0, 0.5); 
+}
+</style>
+    <a href="#">Link</a>
+<style>
+    a:hover {
+    color: hsla(0, 100%, 50%, 0.8); 
+}
+    </style>
+</body>
+</html>

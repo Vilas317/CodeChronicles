@@ -15,8 +15,6 @@ public class KthSmallestElement {
         return maxHeap.peek();
     }
     public static void main(String[] args) {
-        KthSmallestElement kthSmallest = new KthSmallestElement();
-
         int[] A1 = {2, 1, 4, 3, 2};
         int B1 = 3;
         System.out.println("Kth smallest element: " + KthSmallestElement.KthSmallest(A1, B1));

@@ -13,8 +13,6 @@ public class InPlacePrefixSum {
         return A;
     }
     public static void main(String[] args) {
-        InPlacePrefixSum solve = new InPlacePrefixSum();
-
         int[] A1 = {1, 2, 3, 4, 5};
         int[] result1 = InPlacePrefixSum.solve(A1);
         System.out.println(Arrays.toString(result1));

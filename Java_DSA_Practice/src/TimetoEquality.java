@@ -15,8 +15,6 @@ public class TimetoEquality {
     return totaltime;
 }
 public static void main(String[] args) {
-    TimetoEquality solve = new TimetoEquality();
-
     int[] A1 = {2, 4, 1, 3, 2};
     System.out.println(TimetoEquality.solve(A1));
 }

@@ -11,8 +11,6 @@ public class SubarrayingivenRange {
     }
     
     public static void main(String[] args) {
-        SubarrayingivenRange solve = new SubarrayingivenRange();
-
         ArrayList<Integer> A1 = new ArrayList<>(Arrays.asList(4, 3, 2, 6));
         int B1 = 1;
         int C1 = 3;

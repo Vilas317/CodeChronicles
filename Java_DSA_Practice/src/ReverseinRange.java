@@ -11,7 +11,6 @@ public class ReverseinRange {
         return A;
     }
     public static void main(String[] args) {
-        ReverseinRange solve = new ReverseinRange();
         // Test Case 1
         int[] A1 = {1, 2, 3, 4};
         int B1 = 2;
