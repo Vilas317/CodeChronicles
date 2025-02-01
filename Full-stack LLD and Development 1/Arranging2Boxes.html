@@ -1,0 +1,44 @@
+<!-- You are tasked with creating two overlapping elements using CSS positioning and write internal css following the following instructions:
+1. Style the first div element with the class element1 to have a fixed width and height of 100px each.
+2. Apply a background color of your choice to element1.
+3. Position element1 20px from the top and 20px from the left of its containing element.
+4. Style the second div element with the class element2 to have a fixed width and height of 80px each.
+5. Apply a different background color to element2.
+6. Position element2 so that it overlaps element1 by 10px from the top and 10px from the left of its containing element. 
+Verify both divs have absolute positioning
+Verify that div.element1 has height and width of 100px
+Verify that div.element2 has height and width of 80px
+Verify the top and left position for div.elements1 to be 20px
+Verify the top and left position for div.elements2 to be 10px
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .element1 {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        }
+        .element2 {
+        width: 80px;
+        height: 80px;
+        background-color: red;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="element1"></div>
+    <div class="element2"></div>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!-- Style a simple navigation menu.
+You are provided with HTML of a navigation menu made using semantic tags like ul, li.
+
+On ul, change background colour to yellow.
+On li tag, apply space around the element's content by 20px, set font size as 20px and "display" property to inline-block.
+Also, remove the default list style using CSS.
+
+Refer to test cases in order to submit the problem successfully.
+Verify that all li.nav have padding of 20px, font size of 20px
+Verify that ul.nav has background color of 'yellow'
+Verify that ul.nav has no default style. (list-style-type property is none)
+Verify that all li.nav have display of inline block.-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .nav {
+        background-color: yellow;
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        }
+        .nav li {
+        display: inline-block;
+        padding: 20px;
+        font-size: 20px;
+        list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav">
+        <li>Home</li>
+        <li>About Us</li>
+        <li>Our Clients</li>
+        <li>Contact Us</li>
+    </ul>
+</body>
+
+</html>
