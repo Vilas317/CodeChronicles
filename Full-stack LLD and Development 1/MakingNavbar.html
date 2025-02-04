@@ -1,0 +1,69 @@
+<!-- Raw Problem
+
+Write internal CSS and determine flexbox properties of the Navbar.
+
+You are given HTML and some preset CSS as boilerplate.
+
+In HTML:
+1. <header> includes <nav>
+2. <nav> contains list of anchor tags linked to several sections of the webpage
+Don't change any of the boilerplate code.
+To achieve this you need to utilise Flexbox properties in the following manner.
+
+For ul.navigation:
+1. Set the display to flex
+2. And position the <li> across horizontal axis to 'flex-end'
+
+Further, refer to the test cases to understand necessary requirements to submit the problem.
+Verify that the ul has display set as flex.
+Verify that the li elements are positioned as 'flex-end' across horizontal axis. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav bar</title>
+    <link rel="stylesheet" href="preset.css">
+
+    <style>
+        .navigation {
+        display: flex;
+        justify-content: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="navigation">
+                <li class="nav-line"><a class="white-anchors " href="#features">FEATURES</a></li>
+                <li class="nav-line"><a class="white-anchors" href="#details">DETAILS</a></li>
+                <li class="nav-line"><a class="white-anchors" href="#reviews">REVIEWS</a></li>
+                <li class="nav-line"><a class="white-anchors" href="#plans">PLANS</a></li>
+                <li class="nav-line"><a class="white-anchors" href="#signup">SIGN UP</a></li>
+            </ul>
+        </nav>
+        <h2>Header Section</h2>
+    </header>
+    <section id="features">
+        <h2>Features Section</h2>
+    </section>
+    <section id="details">
+        <h2>Details Section</h2>
+    </section>
+    <section id="reviews">
+        <h2>Reviews Section</h2>
+    </section>
+    <section id="plans">
+        <h2>Plans Section</h2>
+    </section>
+    <section id="signup">
+        <h2>Signup Section</h2>
+    </section>
+</body>
+
+</html>

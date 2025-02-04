@@ -1,0 +1,80 @@
+<!-- Write internal CSS and determine flexbox properties of the Footer.
+
+You are given HTML and some preset CSS as boilerplate.
+
+In HTML:
+1. footer contains:
+1.1. div.footer-parent element.
+1.2. p.footer-p element containing copyright info.
+2. div.footer-parent element contains:
+2.1. ul.footer-text -> contains redirectable links
+2.2. ul.social-link -> contains social media logos inscribed in links
+To achieve this you need to utilise Flexbox properties in the following manner.
+
+For div.footer-parent:
+1. Set the display to flex
+2. And position the children elements across horizontal axis to 'space-between'
+
+For ul.footer-text:
+1. Set the display to flex
+2. And position the children elements across horizontal axis to 'start'
+
+For ul.social-link:
+1. Set the display to flex
+2. And position the children elements across horizontal axis to 'end'
+
+Further, refer to the test cases to understand necessary requirements to submit the problem.
+Verify that the div.footer-parent, ul.footer-text & ul.social-link have display set as flex.
+Verify that the div.footer-parent has elements across horizontal axis positioned as 'space-between'.
+Verify that the ul.footer-text has elements across horizontal axis positioned as 'start' or 'flex-start'.
+Verify that the ul.social-link has elements across horizontal axis positioned as 'end' or flex-end. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <link rel="stylesheet" href="preset.css">
+
+    <style>
+        .footer-parent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+        .footer-text {
+        display: flex;
+        list-style: none;
+        justify-content: flex-start;
+        }
+        .social-link {
+        display: flex;
+        list-style: none;
+        justify-content: flex-end;
+    }
+    </style>
+</head>
+
+<body>
+    <footer>
+        <div class="footer-parent">
+            <ul class="footer-text">
+                <li class="text-value"><a href="">About us</a></li>
+                <li class="text-value"><a href="">ios App</a></li>
+                <li class="text-value"><a href="">Android App</a></li>
+            </ul>
+            <ul class="social-link">
+                <li><a href="#"><img src="facebook-logo-svg.svg" alt="logo"></a></li>
+                <li><a href="#"><img src="twitter-logo-svg.svg" alt="logo"></a></li>
+                <li><a href="#"><img src="instagram-round-svg.svg" alt="logo"></a></li>
+                <li><a href="#"><img src="snapchat-svg.svg" alt="logo"></a></li>
+            </ul>
+        </div>
+        <p class="footer-p">Copyright © 2019 EVERYONE. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

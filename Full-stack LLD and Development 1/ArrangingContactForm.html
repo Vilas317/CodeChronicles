@@ -1,0 +1,102 @@
+<!-- Write internal CSS and determine flexbox properties of the Contact Us form.
+
+You are given HTML and some preset CSS as boilerplate.
+
+In HTML:
+1. section.contact-form-section contains:
+1.1. h2 element with content 'CONTACT US'
+1.2. div.container_parent
+2. div.container_parent element contains:
+2.1. img element
+2.2. form element
+To achieve this you need to utilise Flexbox properties in the following manner.
+
+For section.contact-form-section:
+1. Set the display to flex
+2. Set the main axis of flex as y-axis (column)
+3. Align the items to center on the cross-axis
+
+For div.container_parent:
+1. Set the display to flex
+2. And position the children elements across horizontal axis to 'space-evenly'
+
+Further, refer to the test cases to understand necessary requirements to submit the problem.
+Verify that the section.contact-form-section has display set as flex.
+Verify that the flex-direction for section.contact-form-section has value of 'column'.
+Verify that the items inside section.contact-form-section are aligned to center across y-axis.
+Verify that the div.container_parent has display set as flex.
+Verify that the div.container_parent has elements across horizontal axis are spaced evenly.
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="preset.css">
+    <style>
+        .contact-form-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+        .container_parent {
+        display: flex;
+        justify-content: space-evenly;}
+    </style>
+</head>
+
+<body>
+    <section class="contact-form-section">
+        <h2>CONTACT US</h2>
+        <div class="container_parent">
+            <img class="bg-video__content" src="avocado.svg" alt="avocado-svg">
+            <form class="form">
+                <div class="entry">
+                    <div class="entry-text">
+                        Name
+                    </div>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                </div>
+                <div class="entry">
+                    <div class="entry-text">
+                        Email
+                    </div>
+                    <input type="email" name="email" placeholder="Your Email">
+                </div>
+                <div class="entry">
+                    <div class="entry-text">
+                        How did you find us
+                    </div>
+                    <select name="" id="">
+                        <option value="">
+                            friends
+                        </option>
+                        <option value="">search</option>
+                        <option value="">advertsiment</option>
+                        <option value="">other</option>
+                    </select>
+                </div>
+                <div class="entry">
+                    <div class="entry-text">
+                        Drop us a line
+                    </div>
+                    <textarea name="" id="" placeholder="Your Message"></textarea>
+                </div>
+                <div class="entry ">
+                    <input type="checkbox" class="checkbox">
+                    <span class="checkbox-conditions">I have read and agree with all the Privacy Policy and
+                        Terms Conditions</span>
+                </div>
+                <div class="btn-parent">
+                    <a href="#" class="btn btn-full form-button">SEND MESSAGE</a>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+
+</html>
