@@ -1,0 +1,83 @@
+<!-- Write internal CSS to make the features section responsive
+
+You are given HTML and some preset CSS as boilerplate.
+In HTML:
+1. section.features contains:
+1.1. h1 element
+1.2. div.container-parent
+2. div.container-parent contains: (display set as flex)
+2.2. 3 div.containter elements that are the feature cards.
+To achieve this you need to utilise media query in the following manner.
+
+Add a media query for screens smaller than 940px, in which:
+1. Using flex-direction, change the main-axis of the div.container-parent to y-axis
+2. In the div.container-parent, align the items across cross-axis to center.
+
+Note: smaller than 940px will have max-width set to 939px
+
+Further, refer to the test cases to understand necessary requirements to submit the problem.
+Verify that a Media query for screens smaller than 940px (max-width: 939px) is written.
+Verify that in that media query, div.container-parent has main-axis change to y-axis
+Verify that in that media query, div.container-parent has items across the cross-axis aligned to center -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="preset.css">
+</head>
+
+<style>
+    @media (max-width: 939px) {
+    .container-parent {
+    flex-direction: column;
+    align-items: center;
+    }
+    }
+    .container-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    }
+</style>
+
+<body>
+    <section class="features">
+
+        <h2>Features</h2>
+
+        <div class="container-parent">
+            <div class="container">
+                <img class="icon" src="plus-icon.svg" alt="calendar-logo">
+                <h3>365 DAYS/YEAR</h3>
+                <p class="feature-para">
+                    Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage.
+                    You can also choose to order more flexibly if that's your style.
+                </p>
+            </div>
+            <div class="container">
+                <img class="icon" src="plus-icon.svg" alt="calendar-logo">
+                <h3>365 DAYS/YEAR</h3>
+                <p class="feature-para">
+                    Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage.
+                    You can also choose to order more flexibly if that's your style.
+                </p>
+            </div>
+            <div class="container">
+                <img class="icon" src="plus-icon.svg" alt="calendar-logo">
+                <h3>365 DAYS/YEAR</h3>
+                <p class="feature-para">
+                    Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage.
+                    You can also choose to order more flexibly if that's your style.
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

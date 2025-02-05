@@ -1,0 +1,70 @@
+<!-- You are given a web page design that needs to be implemented using CSS Grid.
+
+The design contains:
+a header,
+a navigation menu,
+a main content area,
+and a footer.
+
+
+Further, refer to the test cases to understand necessary requirements to submit the problem.
+Verify that 'grid-container' div has display type of grid.
+Verify that header, nav, content, and footer are defined using CSS Grid properties.-->
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+.grid-container {
+    display: grid;                
+    grid-template-areas: 
+        "header header"
+        "nav content"
+        "footer footer";          
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 60px 1fr 40px;
+    height: 100vh;                
+    gap: 10px;                    
+}
+
+
+.header {
+    grid-area: header;
+    background-color: lightblue;
+    text-align: center;
+    padding: 10px;
+}
+
+.nav {
+    grid-area: nav;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.content {
+    grid-area: content;
+    background-color: white;
+    padding: 10px;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: lightcoral;
+    text-align: center;
+    padding: 10px;
+}
+</style>
+<body>
+	<div class="grid-container">
+		<header class="header">Header</header>
+		<nav class="nav">Nav</nav>
+		<main class="content">Main Content</main>
+		<footer class="footer">Footer</footer>
+	</div>
+</body>
+
+</html>
