@@ -1,0 +1,45 @@
+<!-- You are tasked with creating a simple 3x3 grid layout using CSS Grid.
+Below, you'll find the initial HTML structure and the CSS requirements to achieve
+this grid layout.
+
+CSS Requirements:
+1. Create a simple 3x3 grid layout using CSS Grid for the elements within the .grid container.
+2. Use appropriate CSS Grid properties to achieve the desired grid structure.
+3. Ensure that there is equal spacing between grid items of 10px
+Verify if the following property available on .grid class grid-template-columns: repeat(3, 1fr) or 3fr 3fr 3fr;
+Verify if the following property available on .grid class grid-template-rows: repeat(3, 1fr) or 1fr 1fr 1fr;
+Verify if the following property available on .grid class gap: 10px; -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3x3 Grid Layout</title>
+    <style>
+      .item {
+        background-color: #3498db;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        font-size: 18px;
+      }
+      .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="item">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+      <div class="item">Item 4</div>
+      <div class="item">Item 5</div>
+      <div class="item">Item 6</div>
+    </div>
+  </body>
+</html>

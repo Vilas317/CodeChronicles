@@ -1,0 +1,118 @@
+<!-- Write internal CSS to make the Pricings section responsive
+
+You are given HTML and some preset CSS as boilerplate.
+
+In HTML:
+1. section contains:
+1.1. h2 element
+1.2. div.cards-container
+2. div.cards-container contains: (display set as flex)
+2.2. 3 div.card elements that are the pricing cards.
+To achieve this you need to utilise media query in the following manner.
+
+Add a media query for screens smaller than 768px, in which:
+1. Using flex-direction, change the main-axis of the div.cards-container to y-axis.
+2. In the div.cards-container, align the items across cross-axis to center.
+
+Note: smaller than 768px will have max-width set to 767px
+
+Further, refer to the test cases to understand necessary requirements to submit the problem.
+Verify that a Media query for screens smaller than 768px (max-width: 767px) is written.
+Verify that in that media query, div.cards-container has main-axis change to y-axis
+Verify that in that media query, div.cards-container has items across the cross-axis aligned to center -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing</title>
+
+    <link rel="stylesheet" href="preset.css">
+
+    <style>
+        @media (max-width: 767px) {
+        .cards-container {
+        flex-direction: column;
+        align-items: center;
+        }
+        }
+        .cards-container {
+        display: flex;
+        align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h2>START EATING HEALTHY TODAY</h2>
+
+        <div class="cards-container">
+            <div class="card">
+                <h3>PREMIUM</h3>
+                <h4>$399<span>/month</span></h4>
+                <p>That's only 13.30$ per meal</p>
+                <hr>
+                <div>
+                    <ul>
+                        <li>1 meal every day</li>
+                        <li>Order 24/7</li>
+                        <li>Access to newest creations</li>
+                        <li>Free delivery</li>
+                    </ul>
+
+                    <hr>
+                </div>
+                <div class="signup-button">
+                    <a href="#" class="btn">I'm hungry</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>PREMIUM</h3>
+                <h4>$399<span>/month</span></h4>
+                <p>That's only 13.30$ per meal</p>
+                <hr>
+                <div>
+                    <ul>
+                        <li>1 meal every day</li>
+                        <li>Order 24/7</li>
+                        <li>Access to newest creations</li>
+                        <li>Free delivery</li>
+                    </ul>
+
+                    <hr>
+                </div>
+                <div class="signup-button">
+                    <a href="#" class="btn">I'm hungry</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>PREMIUM</h3>
+                <h4>$399<span>/month</span></h4>
+                <p>That's only 13.30$ per meal</p>
+                <hr>
+                <div>
+                    <ul>
+                        <li>1 meal every day</li>
+                        <li>Order 24/7</li>
+                        <li>Access to newest creations</li>
+                        <li>Free delivery</li>
+                    </ul>
+
+                    <hr>
+                </div>
+                <div class="signup-button">
+                    <a href="#" class="btn">I'm hungry</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+
+</html>
