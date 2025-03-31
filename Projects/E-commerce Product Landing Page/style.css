@@ -1,0 +1,27 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+header, footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+}
+.product {
+    text-align: center;
+    padding: 50px;
+}
+.product img {
+    width: 300px; 
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+button {
+    background: #f04;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
