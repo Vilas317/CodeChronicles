@@ -2,37 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Number Guessing Game</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../styles.css">
+    <style>
+        body { background-color: #333; color: white; text-align: center; }
+        input { margin: 20px; }
+        button { padding: 10px 15px; background-color: #000; color: #fff; border: none; cursor: pointer; }
+        button:hover { background-color: #444; }
+    </style>
 </head>
-<body style="background-color:#212121; color:#fff;">
-  <nav>
-    <a href="/" aria-current="page">Home</a>
-    <a target="_blank" href="https://www.youtube.com/@chaiaurcode"
-      >Youtube channel</a
-    >
-  </nav>
-    
-    <div id="wrapper">
-      <h1>Number guessing game</h1>
+<body>
+    <h1>Number Guessing Game</h1>
     <p>Try and guess a random number between 1 and 100.</p>
-    <p>You have 10 attempts to guess the right number.</p>
-    </br>
-        <form class="form">
-            <label2 for="guessField" id="guess">Guess a number</label>
-            <input type="text" id="guessField" class="guessField">
-            <input type="submit" id="subt" value="Submit guess" class="guessSubmit">
-        </form>
+    <p>You have <span id="attempts">10</span> attempts to guess the right number.</p>
+    <input type="number" id="guess" min="1" max="100" placeholder="Guess a number" />
+    <button onclick="submitGuess()">Submit guess</button>
+    <p id="previousGuesses">Previous Guesses: </p>
+    <p id="status"></p>
 
-        <div class="resultParas">
-            <p >Previous Guesses: <span class="guesses"></span></p>
-            <p >Guesses Remaining: <span class="lastResult">10</span></p>
-            <p class="lowOrHi"></p>
-        </div>
-    </div>
-    <script src="NumberGuess.js"></script>
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 10;
+        let previousGuesses = [];
+
+        function submitGuess() {
+            const guess = Number(document.getElementById('guess').value);
+            const status = document.getElementById('status');
+            const previousGuessesDisplay = document.getElementById('previousGuesses');
+
+            if (guess < 1 || guess > 100) {
+                status.textContent = "Please enter a number between 1 and 100.";
+                return;
+            }
+
+            previousGuesses.push(guess);
+            attempts--;
+
+            if (guess === randomNumber) {
+                status.textContent = "Congratulations! You guessed the right number!";
+            } else if (attempts === 0) {
+                status.textContent = "Game Over! The correct number was " + randomNumber + ".";
+            } else {
+                const hint = guess < randomNumber ? "Higher!" : "Lower!";
+                status.textContent = hint + " Attempts remaining: " + attempts;
+            }
+
+            document.getElementById('attempts').textContent = attempts;
+            previousGuessesDisplay.textContent = "Previous Guesses: " + previousGuesses.join(', ');
+            document.getElementById('guess').value = '';
+        }
+    </script>
 </body>
 </html>
