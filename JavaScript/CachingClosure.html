@@ -1,0 +1,33 @@
+/*Create a JavaScript function that uses closures to
+implement caching (memoization). The function
+should cache the results of complex calculations
+and return the cached result when the same
+inputs occur again.*/
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Counter Closure</title>
+</head>
+
+<body>
+    <script src="script.js">
+        function cachingFunction(complexCalculation) {
+    window.cache = {};
+    return function(arg) {
+        if (cache[arg] != undefined) {
+            return cache[arg];
+        }
+        const result = complexCalculation(arg);
+        cache[arg] = result;
+        return result;
+    };
+}
+</script>
+</body>
+
+</html>
