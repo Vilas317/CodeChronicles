@@ -1,0 +1,50 @@
+/*Using async await complete the function nSeries(fileArray, ansArray),
+that takes in fileArray and ansArray, in which
+fileArray is an array of file names.
+
+Write the code such that:
+1. All the files in the fileArray are serially read using the fetchByPromise(fileName)
+2. Add the content of both files in the ansArray.
+3. At the end of the contents, the ansArray should hold string "All files have been read"
+
+Example:
+
+let ansArray = [];
+let fileArray = ["FILE 1", "FILE 2"];
+nSeries(fileArray, ansArray);
+
+Output:
+ansArray = ['content : FILE 1', 'content : FILE 2', 'All files have been read']*/
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <script defer>
+        function fetchByPromise(fileName) {
+            return new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    resolve(`content : ${fileName}`);
+                }, 100 * Math.random());
+            });
+        }
+    </script>
+     <script id='solution' defer>
+        async function nSeries(fileArray, ansArray) {
+            for(let file of fileArray) {
+                let content = await fetchByPromise(file);
+            }
+                ansArray.push('All files have been read');
+            }
+     </script>
+     </body>
+
+     </html>

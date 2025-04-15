@@ -1,0 +1,26 @@
+/* Q3. DOM Q3: Correcting the equation
+Raw Problem
+
+Write a program in JavaScript to do the below-mentioned task:
+Fix the mathematical problem. '2 + 2 = 22' to '2 + 2 = 4'
+NOTE:
+Using JS only change the innerText property of the target element containing the equation*/
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <p>2 + 2 = 22</p>
+</body>
+<script>
+    document.getElementsByTagName('p')[0].textContent = "2 + 2 = 4";
+</script>
+
+</html>

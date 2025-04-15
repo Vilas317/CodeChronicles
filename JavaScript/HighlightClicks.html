@@ -1,0 +1,51 @@
+/* Write a program in JavaScript,
+that implements the following behaviour on the above p tags:
+
+1. single clicking highlights them with red color
+2. double clicking highlights them with green color
+3. triple removes the highlights
+
+Note:
+Here highlight means to set the background of the element to a desired color.*/
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolores,
+      rerum repudiandae enim consectetur consequatur quae recusandae,
+      perferendis at quod illum, deleniti similique a eius nulla architecto
+      earum. Iure, deleniti.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolores,
+      rerum repudiandae enim consectetur consequatur quae recusandae,
+      perferendis at quod illum, deleniti similique a eius nulla architecto
+      earum. Iure, deleniti.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolores,
+      rerum repudiandae enim consectetur consequatur quae recusandae,
+      perferendis at quod illum, deleniti similique a eius nulla architecto
+      earum. Iure, deleniti.
+    </p>
+    <script>
+        let container = document.querySelector('body');
+        container.addEventListener('click', function(e) {
+            if(e.detail === 2) {
+                e.target.style.backgroundColor = 'green';
+            } else if(e.detail === 3) {
+                e.target.backgroundColor = 'initial';
+            } else {
+                e.target.backgroundColor = 'red';
+            }
+        });
+    </script>
+  </body>
+</html>
