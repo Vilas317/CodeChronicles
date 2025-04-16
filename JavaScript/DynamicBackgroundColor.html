@@ -1,0 +1,48 @@
+/* **Raw Problem**
+Without using media queries do the following things:
+1- For desktop sizes, i.e. window.innerWidth > 1024, make the background of above div 'red'
+2- For tablet sizes, i.e. window.innerWidth > 600 & <= 1024, make the background of above div 'blue'
+3- For mobile sizes, i.e. window.innerWidth <= 600, make the background of above div 'green'
+
+Note:
+Please use JS to enable the above feature whenever the window resizes.
+Online IDE might not show changes when resized due to its limitations. Use your local IDE to test your code before submitting.
+Submissions would work if the code is correct. */
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      div {
+        height: 100vh;
+        width: 100vw;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+        const div = document.querySelector("div");
+        function setBackgroundColor() {
+            const width = window.innerWidth;
+            if(width > 1024) {
+                div.style.background = "red";
+            } else if (width > 600 && width <= 1024) {
+                div.style.background = "blue";
+            } else {
+                div.style.background = "green";
+            }
+        }
+        setBackgroundColor();
+        window.addEventListener("resize", setBackgroundColor);
+    </script>
+  </body>
+</html>

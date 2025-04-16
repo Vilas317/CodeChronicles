@@ -1,0 +1,84 @@
+/*Problem Description:
+
+Given in the HTML are cards with different data-color attributes along with some regular CSS.
+
+Write a script in JavaScript which:
+1. fetches the data-color attribute of the card by double clicking on them
+2. and attaches the fetched value (a color) as a class to that card.
+3. Also changes the data-color attribute to "used".
+
+Note:
+Don't make any changes to the HTML and CSS.*/
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding-top: 5rem;
+        }
+
+        .blue {
+            background-color: blue;
+            box-shadow: 0px 0px 6px 5px;
+        }
+
+        .green {
+            background-color: green;
+            box-shadow: 0px 0px 6px 5px;
+        }
+
+        .red {
+            background-color: red;
+            box-shadow: 0px 0px 6px 5px;
+        }
+
+        .card {
+            border: 1px solid;
+            height: 10rem;
+            width: 10rem;
+            margin: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="red"></div>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="red"></div>
+    <div class="card" data-color="red"></div>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="green"></div>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="green"></div>
+    <div class="card" data-color="blue"></div>
+
+</body>
+
+<script>
+    const allcards = document.querySelectorAll(".card");
+    for(let i=0;i<allcards.length;i++){
+        const cur = allcards[i];
+        cur.addEventListener("dblclick",()=>{
+            const classTo = cur.getAttribute("data-color");
+            if(classTo!='used'){
+                cur.classList.add(classTo);
+                cur.setAttribute("data-color",'used')
+            }
+        })
+    }
+</script>
+</html>
