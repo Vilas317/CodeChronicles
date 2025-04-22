@@ -42,7 +42,6 @@ function buyItem(itemName, quantity) {
         Oil: 120
     };
 
-    // Check if item is valid
     if (!prices[itemName]) {
         console.log(`${itemName} is not available in the store.`);
         return;
