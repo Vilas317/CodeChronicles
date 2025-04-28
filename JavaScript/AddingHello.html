@@ -23,3 +23,66 @@ When the button is clicked, append a <div> element, containing inner text 'Hello
         });
     </script>
 </html>
+
+<!-- Haan, bilkul!
+Tumko baar-baar node filename.js likhne ki zarurat na pade, iske liye kuch easy shortcuts hain:
+
+Option 1: npm start ka use karo
+Apne project folder mein ek package.json file banao (agar nahi hai).
+
+Terminal mein likho:
+
+bash
+Copy
+Edit
+npm init -y
+Ye ek basic package.json bana dega.
+
+Phir package.json file kholke, scripts section mein start command daal do:
+
+json
+Copy
+Edit
+"scripts": {
+  "start": "node yourfile.js"
+}
+(Note: yourfile.js ka naam apne file ke according rakhna.)
+
+Ab bas terminal mein sirf likhna hoga:
+
+bash
+Copy
+Edit
+npm start
+✅ Tumhara code run ho jayega bina node filename.js likhe.
+
+Option 2: VSCode ke "Run Code" shortcut ka use karo
+Agar tum VSCode mein Code Runner extension install kar lo, toh aur easy ho jaayega:
+
+Jaake Extensions mein Code Runner search karo aur install karo.
+
+Ab koi bhi .js file mein ho, bas Right Click → Run Code kar do.
+Ya directly shortcut:
+
+mathematica
+Copy
+Edit
+Ctrl + Alt + N
+Code turant terminal mein run ho jaayega, bina kuch type kiye.
+
+Option 3: Apna ek simple bash script ya alias banao (optional, thoda advanced)
+Agar baar-baar ek hi file run karni hai, toh apne terminal mein ek alias bana sakte ho:
+
+Agar tum Mac/Linux use karte ho:
+
+bash
+Copy
+Edit
+alias runjs="node yourfile.js"
+Ab sirf likhna hoga:
+
+bash
+Copy
+Edit
+runjs
+(Windows mein Powershell ya Git Bash ke through similar cheez ho sakti hai.) -->
