@@ -24,7 +24,12 @@ Ctrl + K + C              | Selection ko comment karne ke liye
 Ctrl + K + U              | Selection ka comment hatane ke liye
 F8 / Shift + F8           | Next / previous error ya warning pe jump karna
 Ctrl + Shift + O          | Show all functions/methods in current file
+Ctrl + Shift + B          | To run current JS file
+Ctrl + Shift + P          | To change theme 
+ctrl + + or -             | Zoom in or Zoom out
 
 --- Java Specific Snippets ---
 psvm + Tab                → public static void main(String[] args) {}
 sout + Tab                → System.out.println();
+
+
