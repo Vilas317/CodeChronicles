@@ -1,0 +1,30 @@
+=============================
+    VS Code Useful Shortcuts
+=============================
+
+Shortcut                   | Kaam
+--------------------------|-----------------------------------------------
+Ctrl + ` (backtick)       | Terminal open/close karne ke liye
+Ctrl + Shift + P          | Command Palette open – har command yahin se milegi
+Ctrl + P                  | Quickly kisi file ko open karo project ke andar
+Ctrl + B                  | Side bar (explorer) hide/show
+Ctrl + /                  | Line comment/uncomment karne ke liye
+Shift + Alt + F           | Code ko auto-format (indent) karne ke liye
+Ctrl + Space              | IntelliSense (auto-suggestions) ke liye
+Alt + ↑ / ↓               | Line ko upar ya neeche move karo
+Shift + Alt + ↑ / ↓       | Line ko copy karke upar/neeche paste karo
+Ctrl + D                  | Next same word ko select karo (multi-cursor)
+Ctrl + F                  | Search in current file
+Ctrl + H                  | Replace in current file
+Ctrl + Shift + F          | Global search across project
+Ctrl + Shift + H          | Global replace across project
+Ctrl + Tab                | Next file tab mein jaane ke liye
+Ctrl + W                  | Current tab close karne ke liye
+Ctrl + K + C              | Selection ko comment karne ke liye
+Ctrl + K + U              | Selection ka comment hatane ke liye
+F8 / Shift + F8           | Next / previous error ya warning pe jump karna
+Ctrl + Shift + O          | Show all functions/methods in current file
+
+--- Java Specific Snippets ---
+psvm + Tab                → public static void main(String[] args) {}
+sout + Tab                → System.out.println();
