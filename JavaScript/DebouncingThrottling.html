@@ -1,0 +1,90 @@
+<!-- Problem 1: Debounced Search Bar
+Create an input box that shows "Typing..." in real time but makes an API call only after user stops typing for 1 second. -->
+
+<!-- <input type="text" id="search" placeholder="Search...">
+<p id="status"></p>
+
+<script>
+  const input = document.getElementById("search");
+  const status = document.getElementById("status");
+
+  // Debounce function
+  function debounce(func, delay) {
+    let timeout;
+    return function (...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        func.apply(this, args);
+      }, delay);
+    };
+  }
+
+  // Function to simulate API call
+  function searchApiCall(e) {
+    console.log("API Call for:", e.target.value);
+    status.textContent = "Result for: " + e.target.value;
+  }
+
+  const debouncedSearch = debounce(searchApiCall, 1000);
+
+  // Event listener
+  input.addEventListener("input", (e) => {
+    status.textContent = "Typing...";
+    debouncedSearch(e);
+  });
+</script> -->
+
+<!-- Problem 2: Throttle Scroll Logger
+Create a throttle function that logs scroll position only once every 500ms while scrolling. -->
+
+<!-- <p style="height: 2000px">Scroll down this long page</p>
+
+<script>
+  // Throttle function
+  function throttle(func, delay) {
+    let last = 0;
+    return function (...args) {
+      const now = new Date().getTime();
+      if (now - last >= delay) {
+        last = now;
+        func.apply(this, args);
+      }
+    };
+  }
+
+  function logScroll() {
+    console.log("Scroll Position:", window.scrollY);
+  }
+
+  const throttledScroll = throttle(logScroll, 500);
+
+  window.addEventListener("scroll", throttledScroll);
+</script> -->
+
+<!-- Problem 3: Resize Event Optimizer
+Use debounce to optimize a window resize event and print the new size only after resizing stops. -->
+
+<p id="size"></p>
+
+<script>
+  const sizeText = document.getElementById("size");
+
+  function debounce(func, delay) {
+    let timeout;
+    return function (...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        func.apply(this, args);
+      }, delay);
+    };
+  }
+
+  function handleResize() {
+    sizeText.textContent = `Width: ${window.innerWidth}, Height: ${window.innerHeight}`;
+    console.log("Window resized!");
+  }
+
+  const debouncedResize = debounce(handleResize, 500);
+
+  window.addEventListener("resize", debouncedResize);
+</script>

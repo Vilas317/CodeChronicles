@@ -328,3 +328,190 @@ Fir uske baad .then() me ek aisa message print karo: "Now chaining works!"*/
 //   .then((msg) => {
 //     console.log(msg);
 //   });
+
+/*🧪 Problem 1: Delayed Greeting
+Write an async function that prints "Hello" after 2 seconds using Promise and await. */
+
+// function sayHello() {
+//         return new Promise((resolve, reject) => {
+//             setTimeout(() => {
+//                 resolve("Hello after 2 seconds");
+//             }, 2000);
+//         });
+//     }
+
+// async function delayedHello() {
+//     try {
+//         let message = await sayHello('Hello');
+//         console.log(message);
+//     } catch (error) {
+//         console.log("Error:", error);
+//     }
+// }
+// delayedHello();
+
+/*🧪 Problem 2: Order Pizza 🍕
+If user orders "pizza", resolve with "Pizza ordered".
+
+If anything else, reject with "Item not available".
+
+Then process order: "Pizza cooked"
+
+Then generate bill: "Bill is Rs. 300"
+
+Print errors if any.*/
+
+// function placeOrder(order) {
+//     return new Promise((resolve, reject) => {
+//         if (order === 'pizza') {
+//             resolve('Pizza Ordered');
+//         } else {
+//             reject('Item not available');
+//         }
+//     });
+// }
+// function processOrder(order) {
+//     return new Promise((resolve) => {
+//         resolve(`Pizza Cooked`);
+//     });
+// }
+// function generateBill(order) {
+//     return new Promise((resolve) => {
+//         resolve(`Bill is Rs. 300`);
+//     });
+// }
+// async function serveOrder() {
+//     try {
+//         let orderStatus = await placeOrder('pizza');
+//         console.log(orderStatus);
+        
+//         let processedOrder = await processOrder(orderStatus);
+//         console.log(processedOrder);
+
+//         let bill = await generateBill(processedOrder);
+//         console.log(bill);
+//     } catch (error) {
+//         console.log("Error:", error);
+//     }
+// }
+// serveOrder();
+
+/*✅ Problem 3: Retry Logic with Async/Await
+👨‍💻 Problem Statement:
+You are calling an API (simulated by a function fetchData) that might fail randomly.
+You need to retry the call up to 3 times, and if it still fails, print "Failed after 3 attempts".
+
+🔧 Requirements:
+Use async/await
+
+Use try/catch
+
+Retry only up to 3 times
+
+Log every attempt (Attempt 1, Attempt 2, etc.)*/
+
+// function fetchData() {
+//     return new Promise((resolve, reject) => {
+//       let success = Math.random() > 0.5;
+//       setTimeout(() => {
+//         if (success) {
+//           resolve("Data fetched successfully");
+//         } else {
+//           reject("API Failed");
+//         }
+//       }, 500);
+//     });
+//   }
+
+//   async function retryFetch() {
+//     let attempts = 0;
+//     let maxAttempts = 3;
+  
+//     while (attempts < maxAttempts) {
+//       try {
+//         attempts++;
+//         console.log(`Attempt ${attempts}`);
+//         let result = await fetchData();
+//         console.log(result);
+//         return; // success, so exit
+//       } catch (error) {
+//         console.log(`Error: ${error}`);
+//       }
+//     }
+  
+//     console.log("Failed after 3 attempts");
+//   }
+  
+//   retryFetch();
+
+/*✅ Problem 4: Sequential Execution of Async Tasks
+👨‍💻 Problem Statement:
+You are given an array of tasks. Each task is a function that returns a promise.
+You need to execute all tasks sequentially using async/await, i.e., one after the other, not in parallel.
+
+🔧 Requirements:
+Tasks should run one after another
+
+Use only async/await (no .then)
+
+Print result of each task*/
+
+// async function runTasksSequentially(tasks) {
+//     for(let i = 0; i < tasks.length; i++) {
+//         const result = await tasks[i]();
+//         console.log(result);
+//     }
+// }
+
+// const tasks = [
+//     () => new Promise(resolve => setTimeout(() => resolve("Task 1 done"), 1000)),
+//     () => new Promise(resolve => setTimeout(() => resolve("Task 2 done"), 500)),
+//     () => new Promise(resolve => setTimeout(() => resolve("Task 3 done"), 200)),
+// ];
+
+// runTasksSequentially(tasks);
+
+/* ChatGPT said:
+Perfect bhai! Chalte hain next interview-level async/await + error handling based question pe — jo Google, Atlassian, Amazon jaisi companies me SDE-1 round me kaafi poocha jaata hai.
+
+✅ Problem 5: Retry Failed Task with Limited Attempts
+👨‍💻 Problem Statement:
+Suppose you are calling a network API (or any async task) that might fail randomly.
+Write a function that retries the async task up to 3 times before giving up.
+
+🔧 Requirements:
+You have one async function unstableTask() which randomly succeeds or fails.
+
+Retry this function up to 3 times if it fails.
+
+If it still fails after 3 tries, throw an error.
+
+Log every attempt (whether success or failure).*/
+
+// function unstableTask() {
+//     return new Promise((resolve, reject) => {
+//       if (Math.random() < 0.5) {
+//         resolve("Success");
+//       } else {
+//         reject("Failed");
+//       }
+//     });
+//   }
+
+// async function retryTask(taskfn, maxRetries) {
+//     for(let attempt = 1; attempt <= maxRetries; attempt++) {
+//         try {
+//             const result = await taskfn();
+//             console.log('Attempt $(attempt): ${result}');
+//             return result;
+//         } catch (error) {
+//             console.log('Attempt ${attempt}: $(error)');
+//             if(attempt === maxRetries) {
+//                 throw new Error("All attemps failed");
+//             }
+//         }
+//     }
+// }
+// retryTask(unstableTask, 3)
+// .then((res) => console.log("Final Result:", res))
+// .catch((err) => console.log("Final Error:", err.message));

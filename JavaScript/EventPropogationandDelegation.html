@@ -1,0 +1,173 @@
+// ⭐ Star Rating Example (Practical Use)
+
+<!-- <div class="stars">
+    <span class="star">⭐</span>
+    <span class="star">⭐</span>
+    <span class="star">⭐</span>
+    <span class="star">⭐</span>
+    <span class="star">⭐</span>
+  </div>
+<script>
+    document.querySelectorAll('.star').forEach((star, index) => {
+  star.addEventListener('click', function (e) {
+    console.log(`Star ${index + 1} clicked`);
+  });
+});
+</script>   -->
+
+<!-- Problem 1: Click Bubble Samajhna
+Task: Har element pe click ka event lagao. Console mein print karo kaunsa element click hua. Pehle capturing phase mein karo, fir bubbling mein. -->
+
+<!-- <div id="outer">
+    <div id="inner">
+      <button id="btn">Click Me</button>
+    </div>
+  </div>
+  
+  <script>
+    document.getElementById("outer").addEventListener(
+      "click",
+      () => {
+        console.log("Outer clicked (Bubbling)");
+      },
+      false // Bubbling phase (default)
+    );
+  
+    document.getElementById("inner").addEventListener(
+      "click",
+      () => {
+        console.log("Inner clicked (Bubbling)");
+      },
+      false
+    );
+  
+    document.getElementById("btn").addEventListener(
+      "click",
+      () => {
+        console.log("Button clicked (Bubbling)");
+      },
+      false
+    );
+  </script> -->
+
+  <!-- ✅ Problem 2: stopPropagation Practice
+💡 Goal:
+Input pe click ho to sirf "Input clicked" aaye. Form wala listener na chale. -->
+
+<!-- <form id="myForm">
+    <input type="text" id="myInput" />
+  </form>
+  
+  <script>
+    document.getElementById("myForm").addEventListener("click", function () {
+      console.log("Form clicked");
+    });
+  
+    document.getElementById("myInput").addEventListener("click", function (e) {
+      e.stopPropagation(); // Stop event from going to parent (form)
+      console.log("Input clicked");
+    });
+  </script> -->
+
+  <!-- 5. Problems for Practice
+  🔹 Problem 1:
+  Ek system banao jahan har comment ke reply ke niche bhi reply diya ja sake. Matbal 3-4 level nested reply system.
+  
+  🔹 Problem 2:
+  Reply button pe click karne par agar reply box already dikh raha ho to use hata do. Toggle logic lagana hai.
+  
+  🔹 Problem 3:
+  Har comment/reply ke aage "Delete" button ho, jo sirf ussi comment ko delete kare. -->
+ 
+  <textarea id="commentInput"></textarea>
+  <button id="submitBtn">Submit</button>
+  <div id="commentsContainer"></div>
+<script>
+  const submitBtn = document.getElementById("submitBtn");
+const commentInput = document.getElementById("commentInput");
+const commentsContainer = document.getElementById("commentsContainer");
+
+submitBtn.addEventListener("click", () => {
+  const commentText = commentInput.value;
+  if (commentText.trim() === "") return;
+  const newComment = createComment(commentText);
+  commentsContainer.appendChild(newComment);
+  commentInput.value = "";
+});
+
+commentsContainer.addEventListener("click", (event) => {
+  if (event.target.classList.contains("reply-btn")) {
+    const parentDiv = event.target.parentElement;
+    const replyBox = parentDiv.querySelector(".reply-box");
+
+    // If reply box already exists, remove it (Toggle)
+    if (replyBox) {
+      replyBox.remove();
+    } else {
+      const input = document.createElement("textarea");
+      input.placeholder = "Reply here...";
+
+      const submitReplyBtn = document.createElement("button");
+      submitReplyBtn.textContent = "Reply";
+      submitReplyBtn.addEventListener("click", () => {
+        const replyText = input.value;
+        if (replyText.trim() === "") return;
+        const reply = createComment(replyText);
+        nestedReplies.appendChild(reply);
+        input.value = "";
+      });
+
+      const replyContainer = document.createElement("div");
+      replyContainer.classList.add("reply-box");
+      replyContainer.appendChild(input);
+      replyContainer.appendChild(submitReplyBtn);
+
+      parentDiv.appendChild(replyContainer);
+    }
+  }
+
+  // Delete button
+  if (event.target.classList.contains("delete-btn")) {
+    const commentDiv = event.target.closest(".comment");
+    commentDiv.remove();
+  }
+});
+
+function createComment(text) {
+  const commentDiv = document.createElement("div");
+  commentDiv.classList.add("comment");
+
+  const para = document.createElement("p");
+  para.textContent = text;
+
+  const replyBtn = document.createElement("button");
+  replyBtn.textContent = "Reply";
+  replyBtn.classList.add("reply-btn");
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.textContent = "Delete";
+  deleteBtn.classList.add("delete-btn");
+
+  const nestedReplies = document.createElement("div");
+  nestedReplies.classList.add("nested");
+
+  commentDiv.appendChild(para);
+  commentDiv.appendChild(replyBtn);
+  commentDiv.appendChild(deleteBtn);
+  commentDiv.appendChild(nestedReplies);
+
+  return commentDiv;
+}
+if (replyBox) {
+  replyBox.remove();
+} else {
+}
+if (event.target.classList.contains("delete-btn")) {
+  const commentDiv = event.target.closest(".comment");
+  commentDiv.remove();
+}
+
+</script>  
+  
+  
+  

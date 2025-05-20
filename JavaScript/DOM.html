@@ -1,0 +1,198 @@
+<!-- ✅ Problem 1: Button click pe "Hello" print karo -->
+
+<!-- <button id="btn">Click Me</button>
+<div id="output"></div>
+<script>
+    document.getElementById("btn").addEventListener("click", function () {
+    document.getElementById("output").textContent = "Hello!";
+});
+</script> -->
+
+<!-- ✅ Problem 2: User se input leke list me dikhana -->
+<!-- <input id="itemInput" />
+<button id="addBtn">Add</button>
+<ul id="itemList"></ul>
+<script>
+    document.getElementById("addBtn").addEventListener("click", function () {
+    let item = document.getElementById("itemInput").value;
+    let li = document.createElement("li");
+    li.textContent = item;
+    document.getElementById("itemList").appendChild(li);
+});
+
+</script> -->
+
+<!-- 🧠 Coding Problem (DOM Manipulation) – Add Items to a List
+Problem:
+You have an empty <ul> in your HTML. Create a text input and a button using JavaScript. 
+When the user types something in the input and clicks the button, add that item as a <li> in the list.
+    🔧 Your JavaScript should:
+
+Create an <input> box and a <button> with text "Add Item".
+
+When the user clicks the button:
+
+Read the text from the input.
+
+Create a new <li> with that text.
+
+Append it to the <ul> with id todoList.
+
+✅ Bonus: Clear the input box after adding. -->
+
+<!-- <input id = "itemInput" />
+<button id = "addButton">Add</button><button>
+
+    <ul id = "todoList"></ul>
+    <script>
+        document.getElementById("addButton").addEventListener("click", function() {
+            let item = document.getElementById("itemInput").value;
+            if(item.trim() === "") return;
+            let li = document.createElement("li");
+            li.textContent = item;
+            document.getElementById("todoList").appendChild(li);
+            document.getElementById("itemInput").value = "";
+        });
+    </script> -->
+
+    <!-- 🧪 Problem: Remove Item from List
+🎯 Goal:
+When a user clicks on any item in the list, it should get removed from the DOM. -->
+
+<!-- <input id="itemInput" />
+<button id="addButton">Add</button>
+
+<ul id="todoList"></ul>
+
+<script>
+    document.getElementById("addButton").addEventListener("click", function () {
+        let item = document.getElementById("itemInput").value;
+        
+        if (item.trim() === "") return;
+
+        let li = document.createElement("li");
+        li.textContent = item;
+
+        document.getElementById("todoList").appendChild(li);
+
+        document.getElementById("itemInput").value = "";
+    });
+    document.getElementById("todoList").addEventListener("click", function (e) {
+        if (e.target.tagName === "LI") {
+            e.target.remove(); 
+        }
+    });
+</script> -->
+
+<!-- 🧪 Problem: Add and Remove List Items with Delete Button
+🔧 Requirements:
+Ek input box aur “Add” button hoga.
+
+Jab user koi item add kare, wo list me dikhe along with a ❌ delete button.
+
+Jab delete button pe click ho, wo specific item list se remove ho jaye. -->
+
+<!-- <input id="itemInput" placeholder="Enter task..." />
+<button id="addButton">Add</button>
+
+<ul id="todoList"></ul>
+
+<script>
+    document.getElementById("addButton").addEventListener("click", function () {
+        let item = document.getElementById("itemInput").value;
+
+        if (item.trim() === "") return;
+
+        // Create <li> and delete button
+        let li = document.createElement("li");
+        li.textContent = item + " ";
+
+        let deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "❌";
+        deleteBtn.style.marginLeft = "10px";
+
+        // Append button to li and li to ul
+        li.appendChild(deleteBtn);
+        document.getElementById("todoList").appendChild(li);
+
+        document.getElementById("itemInput").value = "";
+    });
+
+    document.getElementById("todoList").addEventListener("click", function (e) {
+        if (e.target.tagName === "BUTTON") {
+            e.target.parentElement.remove();
+        }
+    });
+</script> -->
+
+<!-- Problem: Toggle Dark Mode Button
+Description:
+
+Ek simple webpage hai jisme ek button hoga — "Toggle Dark Mode".
+
+Jab user is button pe click kare, toh page ka background color light se dark mein change ho jaye aur text color bhi accordingly adjust ho jaye.
+
+Button dubara click karne pe page wapas light mode mein aajaye.
+
+Why important?
+
+Yeh problem DOM manipulation + event handling dono ko test karta hai.
+
+Real-world feature jaisa hai jo web apps mein common hota hai.
+
+Interview mein pucha ja sakta hai to check understanding of classList and toggling CSS classes. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dark Mode Toggle</title>
+    <style>
+        body.light-mode {
+            background-color: white;
+            color: black;
+        }
+        body.dark-mode {
+            background-color: black;
+            color: white;
+        }
+        #toggleBtn {
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <button id="toggleBtn">Enable Dark Mode</button>
+
+    <script>
+        const body = document.body;
+        const toggleBtn = document.getElementById("toggleBtn");
+
+        // Page load pe localStorage check karo
+        window.onload = function() {
+            const darkMode = localStorage.getItem('darkMode');
+            if (darkMode === 'true') {
+                body.classList.add('dark-mode');
+                body.classList.remove('light-mode');
+                toggleBtn.innerText = "Disable Dark Mode";
+            }
+        };
+
+        toggleBtn.addEventListener("click", function() {
+            body.classList.toggle("dark-mode");
+            body.classList.toggle("light-mode");
+
+            if (body.classList.contains("dark-mode")) {
+                toggleBtn.innerText = "Disable Dark Mode";
+                localStorage.setItem('darkMode', 'true');
+            } else {
+                toggleBtn.innerText = "Enable Dark Mode";
+                localStorage.setItem('darkMode', 'false');
+            }
+        });
+    </script>
+</body>
+</html>
