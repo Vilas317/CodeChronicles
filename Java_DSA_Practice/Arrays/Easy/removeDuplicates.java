@@ -1,5 +1,4 @@
 package Java_DSA_Practice.Arrays.Easy;
-import java.util.*;
 public class removeDuplicates {
     public static void name(String[] args) {
         int arr[] = {1,1,2,2,2,3,3};

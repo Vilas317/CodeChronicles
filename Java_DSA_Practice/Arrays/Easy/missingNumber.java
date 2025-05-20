@@ -1,4 +1,5 @@
-package Java_DSA_Practice.Arrays;
+package Java_DSA_Practice.Arrays.Easy;
+
 import java.util.*;
 
 public class missingNumber {
