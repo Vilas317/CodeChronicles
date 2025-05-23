@@ -1,5 +1,3 @@
-import Java_DSA_Practice.Arrays.Easy.removeDuplicates;
-
 public class Stock {
     public static void main(String[] args) {
         int arr[] = { 7, 1, 5, 3, 6, 4 };
