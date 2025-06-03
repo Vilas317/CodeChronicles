@@ -170,7 +170,7 @@
   color: #888;
 } */
 
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -211,4 +211,14 @@
 
 .read-the-docs {
   color: #888;
+} */
+
+/* src/App.css */
+.App {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+button {
+  margin-left: 10px;
 }

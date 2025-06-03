@@ -66,13 +66,27 @@
 
 // export default App;
 
-import "./App.css";
-import Gallery from "./Gallery";
+// import "./App.css";
+// import Gallery from "./Gallery";
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <Gallery />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// src/App.jsx
+import TodoList from './TodoList';  // ✅ Correct import
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Gallery />
+      <TodoList />
     </div>
   );
 }
