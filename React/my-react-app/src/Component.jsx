@@ -1,5 +1,5 @@
 //Component
 
-function Welcome() {
-    return<h1>Hello, Welcome!</h1>;
-}
+// function Welcome() {
+//     return<h1>Hello, Welcome!</h1>;
+// }
