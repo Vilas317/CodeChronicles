@@ -80,13 +80,39 @@
 // export default App;
 
 // src/App.jsx
-import TodoList from './TodoList';  // ✅ Correct import
-import './App.css';
+// import TodoList from './TodoList';  // ✅ Correct import
+// import './App.css';
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <TodoList />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+// import "./App.css";
+// import Todo from "./Todo";
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <Todo />
+//     </div>
+//   );
+// }
+
+// export default App;
+
+import "./App.css";
+import GetData from "./GetData";
 
 function App() {
   return (
     <div className="App">
-      <TodoList />
+      <GetData />
     </div>
   );
 }
