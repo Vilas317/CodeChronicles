@@ -1,20 +1,44 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const dotenv = require("dotenv");
-const cors = require("cors");
-const connectDB = require("./config/db");
-
-dotenv.config();
-connectDB();
-
+const path = require("path");
 const app = express();
-app.use(cors());
+
+// Load env variables
+dotenv.config();
+
+// Middleware
 app.use(express.json());
 
-app.use("/api/users", require("./routes/userRoutes"));
+// Security middlewares
+const limiter = require("./middlewares/rateLimiter");
+const secureHeaders = require("./middlewares/securityHeaders");
+app.use(limiter);
+app.use(secureHeaders);
 
-app.listen(process.env.PORT, () => {
-  console.log(`🚀 Server running on port ${process.env.PORT}`);
+// Routes
+const authRoutes = require("./routes/authRoutes");
+const emailRoutes = require("./routes/emailRoutes");
+
+app.use("/api/auth", authRoutes);
+app.use("/api/email", emailRoutes);
+
+// Serve frontend
+app.use(express.static(path.join(__dirname, "./client/build")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
+
+// Connect DB and start server
+mongoose
+  .connect(process.env.MONGO_URL)
+  .then(() => {
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  })
+  .catch((err) => console.log("MongoDB Connection Error", err));
+
 // const express = require("express");
 // const app = express();
 
